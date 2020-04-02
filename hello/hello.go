@@ -1,7 +1,6 @@
 package main
 
 import (
-	"example.com/user/hello/morestrings"
 	"fmt"
 )
 
