@@ -7,6 +7,8 @@ import (
 	"fmt"
 
 	"github.com/google/go-cmp/cmp"
+
+	"math/cmplx"
 )
 
 // Same type parameters can be clubbed.
@@ -26,6 +28,16 @@ func split(sum int) (x, y int) {
 	return
 }
 
+// Variables with initializers
+var i, j int = 1, 2
+
+// Basic types example.
+var (
+	ToBe   bool       = false
+	MaxInt uint64     = 1<<64 - 1
+	z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
 func main() {
 	// Hello world.
 	fmt.Println("hello world")
@@ -35,7 +47,7 @@ func main() {
 	fmt.Println(cmp.Diff("Hello World", "Hello Go"))
 
 	// Sum and add.
-	fmt.Printf("Sum of 45 and 29 is %d\n", Sum(45, 29))
+	fmt.Printf("Sum of 45 and 29 is %d\n", morestrings.Sum(45, 29))
 	fmt.Printf("Add of 786 and 233 is %d\n", add(786, 233))
 
 	// Swap.
@@ -45,4 +57,16 @@ func main() {
 	// Split.
 	x, y := split(43)
 	fmt.Printf("Split of integer 43 are %d, %d\n", x, y)
+
+	// Var with inits.
+	fmt.Printf("i, j = %d, %d\n", i, j)
+
+	// Short variable declaration, type is implicit.
+	k := true
+	fmt.Printf("short variable declaration k is %t", k)
+
+	// Basic datatypes.
+	fmt.Printf("ToBe Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("MaxInt Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("z Type: %T, value: %v\n", z, z)
 }

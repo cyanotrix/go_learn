@@ -1,4 +1,4 @@
-package main
+package morestrings
 
 // Sum returns the sum of two integers.
 func Sum(a int, b int) int {
