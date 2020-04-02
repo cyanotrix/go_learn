@@ -40,7 +40,7 @@ var (
 	z      complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
-// Constant example.
+// Pi a constant.
 const Pi = 3.14159265
 
 func main() {
