@@ -8,8 +8,12 @@ import (
 
 // If can have an init condition just like for.
 func pow(x, n, lim float64) float64 {
+	// Variables declared inside an if short statement are
+	// available inside the corresponding else statement.
 	if v := math.Pow(x, n); v < lim {
 		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
 	}
 	return lim
 }
@@ -39,5 +43,5 @@ func main() {
 	}
 
 	// If init condition.
-	fmt.Printf("If with init condition 3^2 and 3^3 returns are %f, %f\n", pow(3, 2, 20), pow(3, 3, 20))
+	fmt.Printf("If with init condition 3^2 and 3^3 returns are %g, %g\n", pow(3, 2, 20), pow(3, 3, 20))
 }
