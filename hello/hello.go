@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
-
 	"example.com/user/hello/morestrings"
+
+	"fmt"
 )
 
 func main() {
