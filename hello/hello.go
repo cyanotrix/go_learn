@@ -43,6 +43,14 @@ var (
 // Pi a constant.
 const Pi = 3.14159265
 
+func needInt(x int) int {
+	return x*10 + 1
+}
+
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
 func main() {
 	// Hello world.
 	fmt.Println("hello world")
@@ -85,4 +93,18 @@ func main() {
 	const World = "世界"
 	fmt.Printf("Hello %s\n", World)
 	fmt.Printf("Happy %.8f day\n", Pi)
+
+	// Numeric constants.
+	const (
+		// Creating a huge number by shifting a 1 bit left 100 places
+		// In other words 1 followed by 100 zeroes.
+		Big = 1 << 100
+		// Shifting it right again 99 places, so we end up with 1<<1, or 2.
+		Small = Big >> 99
+	)
+
+	fmt.Printf("needInt of const Small is %d\n", needInt(Small))
+	fmt.Printf("needFloat of const Small is %3.2f\n", needFloat(Small))
+	fmt.Printf("needFloat of const Big is %.20e\n", needFloat(Big))
+
 }
