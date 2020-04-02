@@ -2,13 +2,15 @@
 package main
 
 import (
+	"math/cmplx"
+
 	"example.com/user/hello/morestrings"
 
 	"fmt"
 
 	"github.com/google/go-cmp/cmp"
 
-	"math/cmplx"
+	"math"
 )
 
 // Same type parameters can be clubbed.
@@ -37,6 +39,9 @@ var (
 	MaxInt uint64     = 1<<64 - 1
 	z      complex128 = cmplx.Sqrt(-5 + 12i)
 )
+
+// Constant example.
+const Pi = 3.14159265
 
 func main() {
 	// Hello world.
@@ -69,4 +74,15 @@ func main() {
 	fmt.Printf("ToBe Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("MaxInt Type: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("z Type: %T, value: %v\n", z, z)
+
+	// Type conversions.
+	x, y = 3, 4
+	var f float64 = math.Sqrt(float64(x*x + y*y))
+	g := uint(f)
+	fmt.Printf("x, y and g are %v, %v, %v\n", x, y, g)
+
+	// Constant example.
+	const World = "世界"
+	fmt.Printf("Hello %s\n", World)
+	fmt.Printf("Happy %.8f day\n", Pi)
 }
